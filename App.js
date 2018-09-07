@@ -1,23 +1,12 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation';
+import HomeScreen from './HomeTab';
+import SecondScreen from './SecondTab';
+import ThirdScreen from './ThirdScreen';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+//This file will serve only for navigation
+export default createBottomTabNavigator({
+  Home: HomeScreen,
+  Second: SecondScreen,
+  Third: ThirdScreen
 });
