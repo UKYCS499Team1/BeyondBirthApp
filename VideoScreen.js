@@ -1,7 +1,7 @@
 import React, {Component}  from 'react';
 import { Text, View, Dimensions, StyleSheet } from 'react-native';
 import { Video } from 'expo';
-import { MaterialIcons, Octicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default class VideoScreen extends Component {
     state = {
