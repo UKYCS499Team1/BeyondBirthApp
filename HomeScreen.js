@@ -5,9 +5,22 @@ import { Actions } from 'react-native-router-flux';
 
 export default class HomeScreen extends Component {
 
-  onPress = () => {
+  onPressVid = () => {
     console.log("Pressed");
     Actions.Videos();
+  }
+  onPressMood = () => {
+    console.log("Pressed");
+    Actions.Health();
+  }
+  onPressLocate = () => {
+    console.log("Pressed");
+    Actions.Locate();
+  }
+
+  onPressSettings = () => {
+    console.log("Pressed");
+    Actions.Settings();
   }
 
   render() {
@@ -16,27 +29,27 @@ export default class HomeScreen extends Component {
         
         <TouchableOpacity
          style={styles.button1}
-         onPress={this.onPress}
+         onPress={this.onPressVid}
        >
        <Text style={styles.buttonText}> Videos </Text>
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button2}
-         onPress={this.onPress}
+         onPress={this.onPressMood}
        >
-       <Text style={styles.buttonText}> Videos </Text>
+       <Text style={styles.buttonText}> Health Dashboard </Text>
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button3}
-         onPress={this.onPress}
+         onPress={this.onPressLocate}
        >
-       <Text style={styles.buttonText}> Videos </Text>
+       <Text style={styles.buttonText}> Service Locator </Text>
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button4}
-         onPress={this.onPress}
+         onPress={this.onPressSettings}
        >
-       <Text style={styles.buttonText}> Videos </Text>
+       <Text style={styles.buttonText}> Settings </Text>
         </TouchableOpacity>
       </View>
     );
@@ -50,31 +63,31 @@ const styles = StyleSheet.create({
   },
   button1: {
     flexDirection: 'row',
-    height: (Dimensions.get('window').height - 50) /4,
+    height: (Dimensions.get('window').height) /4,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'purple'
+    backgroundColor: '#f4aa89'
   },
   button2: {
     flexDirection: 'row',
-    height: (Dimensions.get('window').height - 50) /4,
+    height: (Dimensions.get('window').height) /4,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'grey'
+    backgroundColor: '#ef8383'
   },
   button3: {
     flexDirection: 'row',
-    height: (Dimensions.get('window').height - 50) /4,
+    height: (Dimensions.get('window').height) /4,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'yellow'
+    backgroundColor: '#f06261'
   },
   button4: {
     flexDirection: 'row',
-    height: (Dimensions.get('window').height - 50) /4,
+    height: (Dimensions.get('window').height) /4,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'pink'
+    backgroundColor: '#a958a5'
   },
   buttonText: {
     justifyContent: 'center',
