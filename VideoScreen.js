@@ -28,7 +28,7 @@ export default class VideoScreen extends Component {
       const { width } = Dimensions.get('window');
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Anything could go here!</Text>
+          <Text>Meditation Videos</Text>
           <View>
           <Video
           source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
