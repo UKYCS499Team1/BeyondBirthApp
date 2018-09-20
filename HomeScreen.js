@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 
 export default class HomeScreen extends Component {
 
   onPress = () => {
     console.log("Pressed");
+    Actions.Videos();
   }
 
   render() {
@@ -48,28 +50,28 @@ const styles = StyleSheet.create({
   },
   button1: {
     flexDirection: 'row',
-    height: 150,
+    height: (Dimensions.get('window').height - 50) /4,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'purple'
   },
   button2: {
     flexDirection: 'row',
-    height: 150,
+    height: (Dimensions.get('window').height - 50) /4,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'grey'
   },
   button3: {
     flexDirection: 'row',
-    height: 150,
+    height: (Dimensions.get('window').height - 50) /4,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'yellow'
   },
   button4: {
     flexDirection: 'row',
-    height: 150,
+    height: (Dimensions.get('window').height - 50) /4,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'pink'
