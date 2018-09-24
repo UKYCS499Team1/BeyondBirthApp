@@ -6,7 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 export default class VideoScreen extends Component {
     state = {
       mute: false,
-      shouldPlay: true
+      shouldPlay: false
     }
 
     handlePlay = () => {
@@ -28,7 +28,6 @@ export default class VideoScreen extends Component {
       const { width } = Dimensions.get('window');
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Meditation Videos</Text>
           <View>
           <Video
           source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
@@ -36,7 +35,7 @@ export default class VideoScreen extends Component {
           isMuted={this.state.mute}
           resizeMode="cover"
           style={{ width, height: 300 }}
-/>  
+          />  
 
           <View style={styles.controlBar}>
 
@@ -56,8 +55,12 @@ export default class VideoScreen extends Component {
 
           </View>
 
+          
+
 
           </View>
+
+          
 
           
 

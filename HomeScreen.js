@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     height: (Dimensions.get('window').height) /4,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f4aa89'
+    backgroundColor: '#f4aa89',
   },
   button2: {
     flexDirection: 'row',
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   buttonText: {
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize: 40
+    fontSize: 40,
+    fontFamily: 'notoserif'
   }
 })
