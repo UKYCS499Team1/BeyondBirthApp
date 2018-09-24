@@ -1,12 +1,13 @@
 import React, {Component}  from 'react';
 import { Text, View } from 'react-native';
 
-export default class SettingsScreen extends Component {
+export default class HealthScreen extends Component {
     render() {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>Anything could go here!</Text>
+          <Text>Health Screen</Text>
         </View>
       );
     }
   }
+
