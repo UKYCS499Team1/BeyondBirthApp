@@ -1,6 +1,7 @@
 import HomeScreen from './HomeScreen';
 import VideoScreen from './VideoScreen';
-import HealthScreen from './HealthScreen';
+import HealthNavigationScreen from './HealthNavigationScreen';
+import MoodScreen from './MoodScreen';
 import SettingsScreen from './Settings';
 import LocateScreen from './LocateScreen';
 import React, { Component } from 'react';
@@ -24,8 +25,8 @@ export default class app extends Component{
               title="Videos"
             />
             <Scene
-              key="Health"
-              component={HealthScreen}
+              key="HealthNavigationScreen"
+              component={HealthNavigationScreen}
               title="Health"
             />
             <Scene
@@ -37,6 +38,11 @@ export default class app extends Component{
               key="Settings"
               component={SettingsScreen}
               title="Settings"
+            />
+             <Scene
+              key="MoodManager"
+              component={MoodScreen}
+              title="Mood Manager"
             />
           </Scene>
 
