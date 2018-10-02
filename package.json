@@ -23,7 +23,11 @@
     "npm": "^6.4.0",
     "react": "16.3.1",
     "react-native": "~0.55.2",
+<<<<<<< HEAD
+    "react-native-simple-radio-button": "^2.7.3",
+=======
     "react-native-router-flux": "^4.0.1",
+>>>>>>> upstream/master
     "react-navigation": "^2.13.0"
   }
 }
