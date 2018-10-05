@@ -1,5 +1,5 @@
 import React, {Component}  from 'react';
-import { Text, View, Dimensions, StyleSheet } from 'react-native';
+import { Text, View, Dimensions, StyleSheet, ScrollView } from 'react-native';
 import { Video } from 'expo';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -27,10 +27,11 @@ export default class VideoScreen extends Component {
     render() {
       const { width } = Dimensions.get('window');
       return (
+        <ScrollView>
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <View>
           <Video
-          source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+          source={{ uri: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/American.Horror.Story.S08E03.Forbidden.Fruit.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb%5Beztv%5D.mkv' }}
           shouldPlay= {this.state.shouldPlay}
           isMuted={this.state.mute}
           resizeMode="cover"
@@ -60,11 +61,79 @@ export default class VideoScreen extends Component {
 
           </View>
 
+
+            <View>
+          <Video
+          source={{ uri: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/American.Horror.Story.S08E03.Forbidden.Fruit.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb%5Beztv%5D.mkv' }}
+          shouldPlay= {this.state.shouldPlay}
+          isMuted={this.state.mute}
+          resizeMode="cover"
+          style={{ width, height: 300 }}
+          />  
+
+          <View style={styles.controlBar}>
+
+          <MaterialIcons 
+          name={this.state.mute ? "volume-mute" : "volume-up"}
+          size={45} 
+          color="white" 
+          onPress={this.handleMute} 
+          />
+
+          <MaterialIcons 
+          name={this.state.shouldPlay ? "pause" : "play-arrow"} 
+          size={45}
+          color="white" 
+          onPress={this.handlePlay} 
+          />
+
+          </View>
+
+          
+
+
+          </View>
+
+
+<View>
+          <Video
+          source={{ uri: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/American.Horror.Story.S08E03.Forbidden.Fruit.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb%5Beztv%5D.mkv' }}
+          shouldPlay= {this.state.shouldPlay}
+          isMuted={this.state.mute}
+          resizeMode="cover"
+          style={{ width, height: 300 }}
+          />  
+
+          <View style={styles.controlBar}>
+
+          <MaterialIcons 
+          name={this.state.mute ? "volume-mute" : "volume-up"}
+          size={45} 
+          color="white" 
+          onPress={this.handleMute} 
+          />
+
+          <MaterialIcons 
+          name={this.state.shouldPlay ? "pause" : "play-arrow"} 
+          size={45}
+          color="white" 
+          onPress={this.handlePlay} 
+          />
+
+          </View>
+
+          
+
+
+          </View>
+
+
           
 
           
 
         </View>
+        </ScrollView>
       );
     }
   }
