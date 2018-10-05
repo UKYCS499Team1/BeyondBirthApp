@@ -2,11 +2,13 @@ import React, {Component}  from 'react';
 import { Text, View, Dimensions, StyleSheet, ScrollView } from 'react-native';
 import { Video } from 'expo';
 import { MaterialIcons } from '@expo/vector-icons';
+import VideoComponent from './VideoComponent';
 
 export default class VideoScreen extends Component {
     state = {
       mute: false,
-      shouldPlay: false
+      shouldPlay: false,
+      source: ""
     }
 
     handlePlay = () => {
@@ -28,111 +30,10 @@ export default class VideoScreen extends Component {
       const { width } = Dimensions.get('window');
       return (
         <ScrollView>
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <View>
-          <Video
-          source={{ uri: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/American.Horror.Story.S08E03.Forbidden.Fruit.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb%5Beztv%5D.mkv' }}
-          shouldPlay= {this.state.shouldPlay}
-          isMuted={this.state.mute}
-          resizeMode="cover"
-          style={{ width, height: 300 }}
-          />  
-
-          <View style={styles.controlBar}>
-
-          <MaterialIcons 
-          name={this.state.mute ? "volume-mute" : "volume-up"}
-          size={45} 
-          color="white" 
-          onPress={this.handleMute} 
-          />
-
-          <MaterialIcons 
-          name={this.state.shouldPlay ? "pause" : "play-arrow"} 
-          size={45}
-          color="white" 
-          onPress={this.handlePlay} 
-          />
-
-          </View>
-
-          
-
-
-          </View>
-
-
-            <View>
-          <Video
-          source={{ uri: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/American.Horror.Story.S08E03.Forbidden.Fruit.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb%5Beztv%5D.mkv' }}
-          shouldPlay= {this.state.shouldPlay}
-          isMuted={this.state.mute}
-          resizeMode="cover"
-          style={{ width, height: 300 }}
-          />  
-
-          <View style={styles.controlBar}>
-
-          <MaterialIcons 
-          name={this.state.mute ? "volume-mute" : "volume-up"}
-          size={45} 
-          color="white" 
-          onPress={this.handleMute} 
-          />
-
-          <MaterialIcons 
-          name={this.state.shouldPlay ? "pause" : "play-arrow"} 
-          size={45}
-          color="white" 
-          onPress={this.handlePlay} 
-          />
-
-          </View>
-
-          
-
-
-          </View>
-
-
-<View>
-          <Video
-          source={{ uri: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/American.Horror.Story.S08E03.Forbidden.Fruit.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb%5Beztv%5D.mkv' }}
-          shouldPlay= {this.state.shouldPlay}
-          isMuted={this.state.mute}
-          resizeMode="cover"
-          style={{ width, height: 300 }}
-          />  
-
-          <View style={styles.controlBar}>
-
-          <MaterialIcons 
-          name={this.state.mute ? "volume-mute" : "volume-up"}
-          size={45} 
-          color="white" 
-          onPress={this.handleMute} 
-          />
-
-          <MaterialIcons 
-          name={this.state.shouldPlay ? "pause" : "play-arrow"} 
-          size={45}
-          color="white" 
-          onPress={this.handlePlay} 
-          />
-
-          </View>
-
-          
-
-
-          </View>
-
-
-          
-
-          
-
-        </View>
+        <VideoComponent />
+        <VideoComponent />
+        <VideoComponent />
+        <VideoComponent />
         </ScrollView>
       );
     }
