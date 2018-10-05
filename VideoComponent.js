@@ -8,7 +8,7 @@ export default class VideoComponent extends Component {
     state = {
       mute: false,
       shouldPlay: false,
-      source: ""
+      source: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/American.Horror.Story.S08E03.Forbidden.Fruit.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb%5Beztv%5D.mkv'
     }
 
     handlePlay = () => {
@@ -32,7 +32,7 @@ export default class VideoComponent extends Component {
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <View>
           <Video
-          source={{ uri: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/American.Horror.Story.S08E03.Forbidden.Fruit.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb%5Beztv%5D.mkv' }}
+          source={{ uri: this.state.source }}
           shouldPlay= {this.state.shouldPlay}
           isMuted={this.state.mute}
           resizeMode="cover"

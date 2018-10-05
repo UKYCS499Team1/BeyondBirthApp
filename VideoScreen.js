@@ -1,33 +1,10 @@
 import React, {Component}  from 'react';
 import { Text, View, Dimensions, StyleSheet, ScrollView } from 'react-native';
-import { Video } from 'expo';
-import { MaterialIcons } from '@expo/vector-icons';
 import VideoComponent from './VideoComponent';
 
 export default class VideoScreen extends Component {
-    state = {
-      mute: false,
-      shouldPlay: false,
-      source: ""
-    }
-
-    handlePlay = () => {
-      this.setState((prevState) => ({
-        shouldPlay: !prevState.shouldPlay
-      })
-      )
-    }
-
-    handleMute = () => {
-      this.setState((prevState) => ({
-        mute: !prevState.mute
-      })
-      )
-    }
-
 
     render() {
-      const { width } = Dimensions.get('window');
       return (
         <ScrollView>
         <VideoComponent />
