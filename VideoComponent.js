@@ -8,7 +8,7 @@ export default class VideoComponent extends Component {
     state = {
       mute: false,
       shouldPlay: false,
-      source: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/American.Horror.Story.S08E03.Forbidden.Fruit.720p.AMZN.WEB-DL.DDP5.1.H.264-NTb%5Beztv%5D.mkv'
+      source: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/Introduction+to+Jin+Shin+Jyutsu%C3%82%C2%AE+Self-Help.mp4'
     }
 
     handlePlay = () => {
