@@ -44,7 +44,7 @@ var mood5 = [
     { label: " ", value: 4 },
 ];
 
-export default class HealthScreen extends Component {
+export default class MoodScreen extends Component {
     render() {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
