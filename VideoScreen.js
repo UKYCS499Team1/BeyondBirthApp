@@ -1,70 +1,17 @@
 import React, {Component}  from 'react';
-import { Text, View, Dimensions, StyleSheet } from 'react-native';
-import { Video } from 'expo';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Text, View, Dimensions, StyleSheet, ScrollView } from 'react-native';
+import VideoComponent from './VideoComponent';
 
 export default class VideoScreen extends Component {
-    state = {
-      mute: false,
-      shouldPlay: false
-    }
-
-    handlePlay = () => {
-      this.setState((prevState) => ({
-        shouldPlay: !prevState.shouldPlay
-      })
-      )
-    }
-
-    handleMute = () => {
-      this.setState((prevState) => ({
-        mute: !prevState.mute
-      })
-      )
-    }
-
 
     render() {
-      const { width } = Dimensions.get('window');
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <View>
-          <Video
-          source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
-          shouldPlay= {this.state.shouldPlay}
-          isMuted={this.state.mute}
-          resizeMode="cover"
-          style={{ width, height: 300 }}
-          />  
-
-          <View style={styles.controlBar}>
-
-          <MaterialIcons 
-          name={this.state.mute ? "volume-mute" : "volume-up"}
-          size={45} 
-          color="white" 
-          onPress={this.handleMute} 
-          />
-
-          <MaterialIcons 
-          name={this.state.shouldPlay ? "pause" : "play-arrow"} 
-          size={45}
-          color="white" 
-          onPress={this.handlePlay} 
-          />
-
-          </View>
-
-          
-
-
-          </View>
-
-          
-
-          
-
-        </View>
+        <ScrollView>
+        <VideoComponent />
+        <VideoComponent />
+        <VideoComponent />
+        <VideoComponent />
+        </ScrollView>
       );
     }
   }

@@ -45,26 +45,27 @@ export default class HomeScreen extends Component {
 
 
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1
   },
   button1: {
     flexDirection: 'row',
-    height: (Dimensions.get('window').height) /3,
+    height: ((Dimensions.get('window').height) -80) /3,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f4aa89',
   },
   button2: {
     flexDirection: 'row',
-    height: (Dimensions.get('window').height) /3,
+    height: ((Dimensions.get('window').height) -80) /3,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ef8383'
   },
   button3: {
     flexDirection: 'row',
-    height: (Dimensions.get('window').height) /3,
+    height: ((Dimensions.get('window').height) -80) /3,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f06261'
