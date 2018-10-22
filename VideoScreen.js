@@ -1,15 +1,28 @@
 import React, {Component}  from 'react';
 import { Text, View, Dimensions, StyleSheet, ScrollView } from 'react-native';
 import VideoComponent from './VideoComponent';
+import VideoListJson from './VideoList.json'
 
 export default class VideoScreen extends Component {
 
     render() {
       return (
         <ScrollView>
+        <Text style={styles.title}>
+          {VideoListJson.VideoList.Videos[0].title}
+        </Text >
         <VideoComponent />
+        <Text style={styles.title}>
+          {VideoListJson.VideoList.Videos[1].title}
+        </Text>
         <VideoComponent />
+        <Text style={styles.title}>
+          {VideoListJson.VideoList.Videos[2].title}
+        </Text>
         <VideoComponent />
+        <Text style={styles.title}>
+          {VideoListJson.VideoList.Videos[3].title}
+        </Text>
         <VideoComponent />
         </ScrollView>
       );
@@ -24,15 +37,10 @@ export default class VideoScreen extends Component {
       justifyContent: 'center'
     },
 
-    controlBar: {
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: 45,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: 'rgba(52, 52, 52, 0.9)'
+    title: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      textAlign: 'center'
+
     }
   })
