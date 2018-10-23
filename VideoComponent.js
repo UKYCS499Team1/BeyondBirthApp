@@ -5,11 +5,15 @@ import { Video } from 'expo';
 import { MaterialIcons } from '@expo/vector-icons';
 
 export default class VideoComponent extends Component {
-    state = {
+  constructor(props) {
+    super(props);
+  
+    this.state = {
       mute: false,
       shouldPlay: false,
-      source: 'https://s3.us-east-2.amazonaws.com/beyondbirthvideos/Introduction+to+Jin+Shin+Jyutsu%C3%82%C2%AE+Self-Help.mp4'
+      source: 'abd'
     }
+  }
 
     handlePlay = () => {
       this.setState((prevState) => ({
@@ -25,14 +29,20 @@ export default class VideoComponent extends Component {
       )
     }
 
+    handleSource = (newSource) => {
+      this.setState(() => ({
+        source: newSource
+      }))
+    }
 
+  
     render() {
       const { width } = Dimensions.get('window');
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <View>
           <Video
-          source={{ uri: this.state.source }}
+          source={{ uri: this.props.newState }}
           shouldPlay= {this.state.shouldPlay}
           isMuted={this.state.mute}
           resizeMode="cover"
@@ -62,8 +72,7 @@ export default class VideoComponent extends Component {
 
           </View>
 
-
-
+         
         </View>
       );
     }
