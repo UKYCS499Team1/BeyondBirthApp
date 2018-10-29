@@ -9,10 +9,12 @@ export default class HomeScreen extends Component {
     console.log("Pressed");
     Actions.MoodManager();
   }
-  onPressMood = () => {
+  onPressAppointments = () => {
     console.log("Pressed"); 
+    
   }
-  onPressLocate = () => {
+  onPressReminders = () => {
+    Actions.MedicineReminders();
     console.log("Pressed"); 
   }
 
@@ -28,13 +30,13 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button2}
-         onPress={this.onPressMood}
+         onPress={this.onPressAppointments}
        >
        <Text style={styles.buttonText}>Appointments</Text>
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button3}
-         onPress={this.onPressLocate}
+         onPress={this.onPressReminders}
        >
        <Text style={styles.buttonText}> Medicine Reminders </Text>
         </TouchableOpacity>

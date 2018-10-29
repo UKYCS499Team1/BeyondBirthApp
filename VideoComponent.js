@@ -11,7 +11,7 @@ export default class VideoComponent extends Component {
     this.state = {
       mute: false,
       shouldPlay: false,
-      source: 'abd'
+      source: ''
     }
   }
 
