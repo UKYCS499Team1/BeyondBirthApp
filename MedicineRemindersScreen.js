@@ -70,7 +70,8 @@ export default class LocateScreen extends Component {
       },
 
       buttonText: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: 'white'
       },
 
       button: {
@@ -79,7 +80,7 @@ export default class LocateScreen extends Component {
         justifyContent: 'space-between',
         padding: 25,
         alignItems: 'center',
-        backgroundColor: '#8f7291',
+        backgroundColor: '#0B5EC8',
       }
 
   })
