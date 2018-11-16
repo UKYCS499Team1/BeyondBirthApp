@@ -5,6 +5,27 @@ import VideoListJson from './VideoList.json'
 
 export default class VideoScreen extends Component {
 
+  componentWillMount = () => {
+    console.log("Mounted");
+    fetch('http://jimwalters.homeip.net/video_list.php', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    firstParam: 'yourValue',
+    secondParam: 'yourOtherValue',
+  }),
+}).then((response) => response.json())
+    .then((responseJson) => {
+      return responseJson.movies;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }
+
     render() {
       return (
         <ScrollView>
