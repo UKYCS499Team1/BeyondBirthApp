@@ -5,7 +5,10 @@ import VideoListJson from './VideoList.json'
 
 export default class VideoScreen extends Component {
 
-  componentWillMount = () => {
+ componentWillMount = () => {
+
+  console.log(VideoListJson.VideoList.Videos)
+   /*
     console.log("Mounted");
     fetch('http://jimwalters.homeip.net/video_list.php', {
   method: 'POST',
@@ -24,27 +27,18 @@ export default class VideoScreen extends Component {
     .catch((error) => {
       console.error(error);
     });
+*/
   }
 
+  
     render() {
       return (
         <ScrollView>
-        <Text style={styles.title}>
-          {VideoListJson.VideoList.Videos[0].title}
-        </Text >
-        <VideoComponent newState={VideoListJson.VideoList.Videos[0].url} />
-        <Text style={styles.title}>
-          {VideoListJson.VideoList.Videos[1].title}
-        </Text>
-        <VideoComponent newState={VideoListJson.VideoList.Videos[1].url}/>
-        <Text style={styles.title}>
-          {VideoListJson.VideoList.Videos[2].title}
-        </Text>
-        <VideoComponent newState={VideoListJson.VideoList.Videos[2].url}/>
-        <Text style={styles.title}>
-          {VideoListJson.VideoList.Videos[3].title}
-        </Text>
-        <VideoComponent newState={VideoListJson.VideoList.Videos[3].url}/>
+      {/*Generate the and display all the videos listed in the JSON file*/}
+      {VideoListJson.VideoList.Videos.map((VideoInfo) => (
+      <VideoComponent key={VideoInfo.ID} title={VideoInfo.title} newState={VideoInfo.url}/>
+      ))}
+        
         </ScrollView>
       );
     }
@@ -57,11 +51,4 @@ export default class VideoScreen extends Component {
       alignItems: 'center',
       justifyContent: 'center'
     },
-
-    title: {
-      fontSize: 20,
-      fontWeight: 'bold',
-      textAlign: 'center'
-
-    }
   })

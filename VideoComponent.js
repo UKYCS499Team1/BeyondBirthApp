@@ -1,8 +1,9 @@
 
 import React, {Component}  from 'react';
-import { View, Dimensions, StyleSheet,} from 'react-native';
+import { View, Text, Dimensions, StyleSheet,} from 'react-native';
 import { Video } from 'expo';
 import { MaterialIcons } from '@expo/vector-icons';
+import VideoListJson from './VideoList.json'
 
 export default class VideoComponent extends Component {
   constructor(props) {
@@ -40,7 +41,10 @@ export default class VideoComponent extends Component {
       const { width } = Dimensions.get('window');
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <View>
+        <View>
+          <Text style={styles.title}>
+          {this.props.title}
+          </Text >
           <Video
           source={{ uri: this.props.newState }}
           shouldPlay= {this.state.shouldPlay}
@@ -96,5 +100,11 @@ export default class VideoComponent extends Component {
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: 'rgba(52, 52, 52, 0.9)'
+    },
+
+    title: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      textAlign: 'center'
     }
   })
