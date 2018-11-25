@@ -1,9 +1,11 @@
 import React, {Component}  from 'react';
-import { Text, StyleSheet, ScrollView } from 'react-native';
+import {ScrollView} from 'react-native';
 import VideoComponent from './VideoComponent';
 import VideoListJson from './VideoList.json'
 
 export default class VideoScreen extends Component {
+
+  //When the page is loaded, fetch for the data from the SQL server and save it to a JSON file
 /*
  componentWillMount = () => {
 
@@ -33,7 +35,7 @@ export default class VideoScreen extends Component {
     render() {
       return (
         <ScrollView>
-      {/*Generate the and display all the videos listed in the JSON file*/}
+      {/*Generate and display all the videos listed in the JSON file with correct title, url, and ID*/}
       {VideoListJson.VideoList.Videos.map((VideoInfo) => (
       <VideoComponent key={VideoInfo.ID} title={VideoInfo.title} newState={VideoInfo.url}/>
       ))}
@@ -42,12 +44,3 @@ export default class VideoScreen extends Component {
       );
     }
   }
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#ffffff',
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-  })

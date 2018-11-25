@@ -3,7 +3,6 @@ import React, {Component}  from 'react';
 import { View, Text, Dimensions, StyleSheet,} from 'react-native';
 import { Video } from 'expo';
 import { MaterialIcons } from '@expo/vector-icons';
-import VideoListJson from './VideoList.json'
 
 export default class VideoComponent extends Component {
   constructor(props) {
@@ -16,6 +15,7 @@ export default class VideoComponent extends Component {
     }
   }
 
+    //When play button is pressed, run this function to flip play state
     handlePlay = () => {
       this.setState((prevState) => ({
         shouldPlay: !prevState.shouldPlay
@@ -23,19 +23,13 @@ export default class VideoComponent extends Component {
       )
     }
 
+    //When mute button is pressed, run this function to flip mute state
     handleMute = () => {
       this.setState((prevState) => ({
         mute: !prevState.mute
       })
       )
     }
-
-    handleSource = (newSource) => {
-      this.setState(() => ({
-        source: newSource
-      }))
-    }
-
   
     render() {
       const { width } = Dimensions.get('window');
@@ -55,13 +49,14 @@ export default class VideoComponent extends Component {
 
           <View style={styles.controlBar}>
 
+          {/* Mute button */}
           <MaterialIcons 
           name={this.state.mute ? "volume-mute" : "volume-up"}
           size={45} 
           color="white" 
           onPress={this.handleMute} 
           />
-
+           {/* Play button */}
           <MaterialIcons 
           name={this.state.shouldPlay ? "pause" : "play-arrow"} 
           size={45}
