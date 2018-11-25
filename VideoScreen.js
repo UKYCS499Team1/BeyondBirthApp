@@ -4,13 +4,13 @@ import VideoComponent from './VideoComponent';
 import VideoListJson from './VideoList.json'
 
 export default class VideoScreen extends Component {
-
+/*
  componentWillMount = () => {
 
   console.log(VideoListJson.VideoList.Videos)
-   /*
+
     console.log("Mounted");
-    fetch('http://jimwalters.homeip.net/video_list.php', {
+    fetch('http://jimwalters.homeip.net:3306', {
   method: 'POST',
   headers: {
     Accept: 'application/json',
@@ -27,9 +27,8 @@ export default class VideoScreen extends Component {
     .catch((error) => {
       console.error(error);
     });
-*/
   }
-
+  */
   
     render() {
       return (
