@@ -100,6 +100,7 @@ export default class VideoComponent extends Component {
     title: {
       fontSize: 20,
       fontWeight: 'bold',
-      textAlign: 'center'
+      textAlign: 'center',
+      color: 'white'
     }
   })
