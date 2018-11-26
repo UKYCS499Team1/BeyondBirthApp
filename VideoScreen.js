@@ -34,7 +34,7 @@ export default class VideoScreen extends Component {
   
     render() {
       return (
-        <ScrollView>
+        <ScrollView style={{backgroundColor: '#0B5EC8'}}>
       {/*Generate and display all the videos listed in the JSON file with correct title, url, and ID*/}
       {VideoListJson.VideoList.Videos.map((VideoInfo) => (
       <VideoComponent key={VideoInfo.ID} title={VideoInfo.title} newState={VideoInfo.url}/>
