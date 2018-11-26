@@ -66,33 +66,34 @@ const styles = StyleSheet.create({
     height: (Dimensions.get('window').height) /4,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f4aa89',
+    backgroundColor: '#379FFB',
   },
   button2: {
     flexDirection: 'row',
     height: (Dimensions.get('window').height) /4,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ef8383'
+    backgroundColor: '#2190FB'
   },
   button3: {
     flexDirection: 'row',
     height: (Dimensions.get('window').height) /4,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f06261'
+    backgroundColor: '#0E74E3'
   },
   button4: {
     flexDirection: 'row',
     height: (Dimensions.get('window').height) /4,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#a958a5'
+    backgroundColor: '#0B5EC8'
   },
   buttonText: {
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: 40,
-    fontFamily: 'notoserif'
+    fontFamily: 'notoserif',
+    color: 'white'
   }
 })

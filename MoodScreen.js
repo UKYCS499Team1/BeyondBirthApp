@@ -9,6 +9,7 @@ import RadioForm, {
 } from 'react-native-simple-radio-button';
 
 var mood1 = [
+
     { label: "1", value: 1 },
     { label: "2", value: 2 },
     { label: "3", value: 3 },
@@ -63,10 +64,10 @@ var showMood5 = 0;
 export default class MoodScreen extends Component {
     render() {
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-              <Text>Please rank your mood accordingly</Text>
-              <Text> </Text>
-              <Text>Sad</Text>             
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: "#0B5EC8" }}>
+              <Text style={{color: 'white'}}>Please rank your mood accordingly from 1-5 </Text>
+              <Text style={{color: 'white'}}>(Starting from 1 on the left)</Text>
+              <Text style={{color: 'white'}}>Sad</Text>             
               <RadioForm
                   radio_props={mood1}
                   intial={-1}
@@ -74,10 +75,10 @@ export default class MoodScreen extends Component {
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#E4DCF1'}
-                  selectedButtonColor={'#E4DCF1'}
+                  buttonColor={'white'}
+                  selectedButtonColor={'white'}
               />
-              <Text>Happy</Text>
+              <Text style={{color: 'white'}}>Happy</Text>
               <RadioForm                 
                   radio_props={mood2}
                   intial={-1}
@@ -85,10 +86,10 @@ export default class MoodScreen extends Component {
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#8874A3'}
-                  selectedButtonColor={'#8874A3'}
+                  buttonColor={'white'}
+                  selectedButtonColor={'white'}
               />     
-              <Text>Angry</Text>
+              <Text style={{color: 'white'}}>Angry</Text>
               <RadioForm
                   radio_props={mood3}
                   intial={-1}
@@ -96,10 +97,10 @@ export default class MoodScreen extends Component {
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#3D1E6D'}
-                  selectedButtonColor={'#3D1E6D'}
+                  buttonColor={'white'}
+                  selectedButtonColor={'white'}
               />
-              <Text>Depressed</Text>
+              <Text style={{color: 'white'}}>Depressed</Text>
               <RadioForm
                   radio_props={mood4}
                   intial={-1}
@@ -107,10 +108,10 @@ export default class MoodScreen extends Component {
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#3D2352'}
-                  selectedButtonColor={'#3D2352'}
+                  buttonColor={'white'}
+                  selectedButtonColor={'white'}
               />
-              <Text>Calm</Text>
+              <Text style={{color: 'white'}}>Calm</Text>
               <RadioForm
                   radio_props={mood5}
                   intial={-1}
@@ -118,8 +119,8 @@ export default class MoodScreen extends Component {
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#2E003E'}
-                  selectedButtonColor={'#2E003E'}
+                  buttonColor={'white'}
+                  selectedButtonColor={'white'}
               /> 
               <TouchableOpacity onPress={this.saveData}>
                   <Text> Submit </Text>

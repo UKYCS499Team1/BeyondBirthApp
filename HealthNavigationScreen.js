@@ -9,10 +9,12 @@ export default class HomeScreen extends Component {
     console.log("Pressed");
     Actions.MoodManager();
   }
-  onPressMood = () => {
+  onPressAppointments = () => {
     console.log("Pressed"); 
+    
   }
-  onPressLocate = () => {
+  onPressReminders = () => {
+    Actions.MedicineReminders();
     console.log("Pressed"); 
   }
 
@@ -28,13 +30,13 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button2}
-         onPress={this.onPressMood}
+         onPress={this.onPressAppointments}
        >
        <Text style={styles.buttonText}>Appointments</Text>
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button3}
-         onPress={this.onPressLocate}
+         onPress={this.onPressReminders}
        >
        <Text style={styles.buttonText}> Medicine Reminders </Text>
         </TouchableOpacity>
@@ -54,26 +56,27 @@ const styles = StyleSheet.create({
     height: ((Dimensions.get('window').height) -80) /3,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f4aa89',
+    backgroundColor: '#379FFB',
   },
   button2: {
     flexDirection: 'row',
     height: ((Dimensions.get('window').height) -80) /3,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ef8383'
+    backgroundColor: '#2190FB'
   },
   button3: {
     flexDirection: 'row',
     height: ((Dimensions.get('window').height) -80) /3,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f06261'
+    backgroundColor: '#0E74E3'
   },
   buttonText: {
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: 40,
-    fontFamily: 'notoserif'
+    fontFamily: 'notoserif',
+    color: 'white'
   }
 })

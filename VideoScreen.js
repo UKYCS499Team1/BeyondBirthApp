@@ -1,38 +1,46 @@
 import React, {Component}  from 'react';
-import { Text, View, Dimensions, StyleSheet, ScrollView } from 'react-native';
+import {ScrollView} from 'react-native';
 import VideoComponent from './VideoComponent';
+import VideoListJson from './VideoList.json'
 
 export default class VideoScreen extends Component {
 
+  //When the page is loaded, fetch for the data from the SQL server and save it to a JSON file
+/*
+ componentWillMount = () => {
+
+  console.log(VideoListJson.VideoList.Videos)
+
+    console.log("Mounted");
+    fetch('http://jimwalters.homeip.net:3306', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    firstParam: 'yourValue',
+    secondParam: 'yourOtherValue',
+  }),
+}).then((response) => response.json())
+    .then((responseJson) => {
+      return responseJson.movies;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }
+  */
+  
     render() {
       return (
-        <ScrollView>
-        <VideoComponent />
-        <VideoComponent />
-        <VideoComponent />
-        <VideoComponent />
+        <ScrollView style={{backgroundColor: '#0B5EC8'}}>
+      {/*Generate and display all the videos listed in the JSON file with correct title, url, and ID*/}
+      {VideoListJson.VideoList.Videos.map((VideoInfo) => (
+      <VideoComponent key={VideoInfo.ID} title={VideoInfo.title} newState={VideoInfo.url}/>
+      ))}
+        
         </ScrollView>
       );
     }
   }
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#ffffff',
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-
-    controlBar: {
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: 45,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: 'rgba(52, 52, 52, 0.9)'
-    }
-  })
