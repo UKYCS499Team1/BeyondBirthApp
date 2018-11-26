@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { AsyncStorage } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { Text, View } from 'react-native';
 import RadioForm, {
     RadioButton,
@@ -7,105 +9,154 @@ import RadioForm, {
 } from 'react-native-simple-radio-button';
 
 var mood1 = [
-    { label: "1", value: 0 },
-    { label: "2", value: 1 },
-    { label: "3", value: 2 },
-    { label: "4", value: 3 },
-    { label: "5", value: 4 },
+    { label: "1", value: 1 },
+    { label: "2", value: 2 },
+    { label: "3", value: 3 },
+    { label: "4", value: 4 },
+    { label: "5", value: 5 },
 ];
 
 var mood2 = [
-    { label: " ", value: 0 },
     { label: " ", value: 1 },
     { label: " ", value: 2 },
     { label: " ", value: 3 },
     { label: " ", value: 4 },
+    { label: " ", value: 5 },
 ];
+
 var mood3 = [
-    { label: " ", value: 0 },
     { label: " ", value: 1 },
     { label: " ", value: 2 },
     { label: " ", value: 3 },
     { label: " ", value: 4 },
+    { label: " ", value: 5 },
 ];
+
 var mood4 = [
-    { label: " ", value: 0 },
     { label: " ", value: 1 },
     { label: " ", value: 2 },
     { label: " ", value: 3 },
     { label: " ", value: 4 },
+    { label: " ", value: 5 },
 ];
 
 var mood5 = [
-    { label: " ", value: 0 },
     { label: " ", value: 1 },
     { label: " ", value: 2 },
     { label: " ", value: 3 },
     { label: " ", value: 4 },
+    { label: " ", value: 5 },
 ];
+
+var mood1value = 0;
+var mood2value = 0;
+var mood3value = 0;
+var mood4value = 0;
+var mood5value = 0;
+
+var showMood1 = 0;
+var showMood2 = 0;
+var showMood3 = 0;
+var showMood4 = 0;
+var showMood5 = 0;
 
 export default class MoodScreen extends Component {
     render() {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
               <Text>Please rank your mood accordingly</Text>
+              <Text> </Text>
               <Text>Sad</Text>             
               <RadioForm
                   radio_props={mood1}
-                  intial={1}
-                  onPress={(value) => { }}
+                  intial={-1}
+                  onPress={(value) => { mood1value = value, console.log(mood1value) }}
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#F59BAD'}
-                  selectedButtonColor={'#F59BAD'}
+                  buttonColor={'#E4DCF1'}
+                  selectedButtonColor={'#E4DCF1'}
               />
               <Text>Happy</Text>
               <RadioForm                 
                   radio_props={mood2}
-                  intial={1}
-                  onPress={(value) => { }}
+                  intial={-1}
+                  onPress={(value) => { mood2value = value, console.log(mood2value) }}
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#FAD0D5'}
-                  selectedButtonColor={'#FAD0D5'}
+                  buttonColor={'#8874A3'}
+                  selectedButtonColor={'#8874A3'}
               />     
               <Text>Angry</Text>
               <RadioForm
                   radio_props={mood3}
-                  intial={1}
-                  onPress={(value) => { }}
+                  intial={-1}
+                  onPress={(value) => { mood3value = value, console.log(mood3value) }}
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#F8EADC'}
-                  selectedButtonColor={'#F8EADC'}
+                  buttonColor={'#3D1E6D'}
+                  selectedButtonColor={'#3D1E6D'}
               />
               <Text>Depressed</Text>
               <RadioForm
                   radio_props={mood4}
-                  intial={1}
-                  onPress={(value) => { }}
+                  intial={-1}
+                  onPress={(value) => { mood4value = value, console.log(mood4value) }}
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#778BBE'}
-                  selectedButtonColor={'#778BBE'}
+                  buttonColor={'#3D2352'}
+                  selectedButtonColor={'#3D2352'}
               />
               <Text>Calm</Text>
               <RadioForm
                   radio_props={mood5}
-                  intial={1}
-                  onPress={(value) => { }}
+                  intial={-1}
+                  onPress={(value) => { mood5value = value, console.log(mood5value) }}
                   formHorizontal={true}
                   labelHorizontal={false}
                   buttonWrapStyle={{ marginLeft: 10 }}
-                  buttonColor={'#9EDEF9'}
-                  selectedButtonColor={'#9EDEF9'}
+                  buttonColor={'#2E003E'}
+                  selectedButtonColor={'#2E003E'}
               /> 
+              <TouchableOpacity onPress={this.saveData}>
+                  <Text> Submit </Text>
+              </TouchableOpacity> 
+              <TouchableOpacity onPress={this.viewData}>
+                  <Text> View </Text>
+              </TouchableOpacity>
           </View>
       );
+    }
+
+    saveData() {
+        alert('Saving Mood Values')
+
+        var moodJSON = {
+            sad: mood1value,
+            happy: mood2value,
+            angry: mood3value,
+            depressed: mood4value,
+            calm: mood5value,
+        };
+
+        showMood1 = moodJSON.sad
+        showMood2 = moodJSON.happy
+        showMood3 = moodJSON.angry
+        showMood4 = moodJSON.depressed
+        showMood5 = moodJSON.calm
+        
+        AsyncStorage.setItem('moodJSON', JSON.stringify(moodJSON), () => {
+            AsyncStorage.getItem('moodJSON', (err, result) => {
+                console.log(result);
+            });
+        });
+    }
+
+    viewData() {
+        alert('Sad: ' + showMood1 + '  Happy: ' + showMood2 + '  Angry: ' + showMood3 + '  Depressed: ' + showMood4 + '  Calm: ' + showMood5)
     }
   }
 
