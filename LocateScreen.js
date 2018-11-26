@@ -1,11 +1,12 @@
 import React, {Component}  from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Linking } from 'react-native';
 
 export default class LocateScreen extends Component {
     render() {
       return (
         <View style={styles.container}>
-          <Text style= {styles.text}>
+          <Text style= {styles.text}
+          onPress={() => Linking.openURL('http://google.com')}>
           Nicholasville
           </Text>
           <Text style={styles.smallText}>{`         
@@ -15,7 +16,8 @@ export default class LocateScreen extends Component {
           Appointments available`}
           </Text>
 
-          <Text style= {styles.text}>
+          <Text style= {styles.text}
+          onPress={() => Linking.openURL('http://google.com')}>
           Richmond Road
           </Text>
           <Text style={styles.smallText}>{`          
@@ -25,7 +27,8 @@ export default class LocateScreen extends Component {
           Appointments available`}
           </Text>
 
-          <Text style= {styles.text}>
+          <Text style= {styles.text}
+          onPress={() => Linking.openURL('http://google.com')}>
           Fayette Mall
           </Text>
           <Text style={styles.smallText}>{`          
