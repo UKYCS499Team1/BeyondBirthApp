@@ -2,8 +2,8 @@ import HomeScreen from './HomeScreen';
 import VideoScreen from './VideoScreen';
 import HealthNavigationScreen from './HealthNavigationScreen';
 import MoodScreen from './MoodScreen';
-import SettingsScreen from './Settings';
-import LocateScreen from './LocateScreen';
+import AboutScreen from './AboutScreen';
+import ResourceScreen from './ResourceScreen';
 import MedicineRemindersScreen from './MedicineRemindersScreen';
 import React, { Component } from 'react';
 import { Router, Scene } from 'react-native-router-flux';
@@ -31,14 +31,14 @@ export default class app extends Component{
               title="Health"
             />
             <Scene
-              key="Locate"
-              component={LocateScreen}
-              title="Locate"
+              key="Resources"
+              component={ResourceScreen}
+              title="Resources"
             />
             <Scene
-              key="Settings"
-              component={SettingsScreen}
-              title="Settings"
+              key="AboutUs"
+              component={AboutScreen}
+              title="About Us"
             />
              <Scene
               key="MoodManager"

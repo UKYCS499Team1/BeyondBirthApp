@@ -9,18 +9,18 @@ export default class HomeScreen extends Component {
     console.log("Pressed");
     Actions.Videos();
   }
-  onPressMood = () => {
+  onPressMoodManager = () => {
     console.log("Pressed");
-    Actions.HealthNavigationScreen();
+    Actions.MoodManager();
   }
-  onPressLocate = () => {
+  onPressResources = () => {
     console.log("Pressed");
-    Actions.Locate();
+    Actions.Resources();
   }
 
-  onPressSettings = () => {
+  onPressAboutUs = () => {
     console.log("Pressed");
-    Actions.Settings();
+    Actions.AboutUs();
   }
 
   render() {
@@ -35,21 +35,21 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button2}
-         onPress={this.onPressMood}
+         onPress={this.onPressMoodManager}
        >
-       <Text style={styles.buttonText}> Health Dashboard </Text>
+       <Text style={styles.buttonText}> Mood Manager </Text>
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button3}
-         onPress={this.onPressLocate}
+         onPress={this.onPressResources}
        >
-       <Text style={styles.buttonText}> Service Locator </Text>
+       <Text style={styles.buttonText}> Resources </Text>
         </TouchableOpacity>
         <TouchableOpacity
          style={styles.button4}
-         onPress={this.onPressSettings}
+         onPress={this.onPressAboutUs}
        >
-       <Text style={styles.buttonText}> Settings </Text>
+       <Text style={styles.buttonText}> About Us </Text>
         </TouchableOpacity>
       </View>
     );
