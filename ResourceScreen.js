@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 25,
     fontWeight: 'bold',
-    color: 'white'
+    color: 'white',
+    textDecorationLine: 'underline'
   },
 
   smallText: {
