@@ -6,32 +6,24 @@ import VideoListJson from './VideoList.json'
 export default class VideoScreen extends Component {
 
   //When the page is loaded, fetch for the data from the SQL server and save it to a JSON file
-/*
+  //http://jimwalters.homeip.net:3306
  componentWillMount = () => {
 
   console.log(VideoListJson.VideoList.Videos)
-
     console.log("Mounted");
-    fetch('http://jimwalters.homeip.net:3306', {
+    return fetch('http://facebook.github.io/react-native/movies.json', {
   method: 'POST',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    firstParam: 'yourValue',
-    secondParam: 'yourOtherValue',
-  }),
 }).then((response) => response.json())
     .then((responseJson) => {
-      return responseJson.movies;
+      this.setState({
+        movies: responseJson.movies
     })
     .catch((error) => {
       console.error(error);
     });
-  }
-  */
-  
+  });
+}
+
     render() {
       return (
         <ScrollView style={{backgroundColor: '#0B5EC8'}}>

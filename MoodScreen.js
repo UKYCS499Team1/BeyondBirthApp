@@ -123,10 +123,20 @@ export default class MoodScreen extends Component {
                   selectedButtonColor={'white'}
               /> 
               <TouchableOpacity onPress={this.saveData}>
-                  <Text style={{color: 'white'}}> Submit </Text>
+                  <Text style={{
+                          fontSize: 25,
+                          fontWeight: 'bold',
+                          color: 'white'
+                            }}
+                    > Submit </Text>
               </TouchableOpacity> 
               <TouchableOpacity onPress={this.viewData}>
-                  <Text style={{color: 'white'}}> View </Text>
+              <Text style={{
+                          fontSize: 25,
+                          fontWeight: 'bold',
+                          color: 'white'
+                            }}
+                    > View </Text>
               </TouchableOpacity>
           </View>
       );
