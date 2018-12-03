@@ -9,7 +9,7 @@ export default class VideoScreen extends Component {
     super(props);
   
     this.state = {
-      jsonFile: null
+      jsonFile: []
     }
   }
   //When the page is loaded, fetch for the data from the SQL server and save it to a JSON file
@@ -23,10 +23,7 @@ export default class VideoScreen extends Component {
       console.log(responseJson);
       this.setState({
         jsonFile: responseJson
-      })
-    .catch((error) => {
-      console.error(error);
-    });
+      });
   });
     
 }
