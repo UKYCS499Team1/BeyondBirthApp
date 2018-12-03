@@ -5,39 +5,36 @@ import VideoListJson from './VideoList.json'
 
 export default class VideoScreen extends Component {
 
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      jsonFile: []
+    }
+  }
   //When the page is loaded, fetch for the data from the SQL server and save it to a JSON file
-/*
+  
  componentWillMount = () => {
-
-  console.log(VideoListJson.VideoList.Videos)
-
     console.log("Mounted");
-    fetch('http://jimwalters.homeip.net:3306', {
+    return fetch('http://jimwalters.homeip.net/video_list_json.php', {
   method: 'POST',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    firstParam: 'yourValue',
-    secondParam: 'yourOtherValue',
-  }),
 }).then((response) => response.json())
     .then((responseJson) => {
-      return responseJson.movies;
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  }
-  */
-  
+      console.log(responseJson);
+      this.setState({
+        jsonFile: responseJson
+      });
+  });
+    
+}
+
     render() {
       return (
         <ScrollView style={{backgroundColor: '#0B5EC8'}}>
       {/*Generate and display all the videos listed in the JSON file with correct title, url, and ID*/}
-      {VideoListJson.VideoList.Videos.map((VideoInfo) => (
-      <VideoComponent key={VideoInfo.ID} title={VideoInfo.title} newState={VideoInfo.url}/>
+      {console.log('STATE:' + this.state.jsonFile)}
+      {this.state.jsonFile.map((VideoInfo) => (
+      <VideoComponent key={VideoInfo[0]} title={VideoInfo[1]} newState={VideoInfo[2]}/>
       ))}
         
         </ScrollView>
