@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { AsyncStorage } from 'react-native';
 import { TouchableOpacity } from 'react-native';
-import { Text, View } from 'react-native';
+import { Text, View, Alert } from 'react-native';
+import { Linking, StyleSheet } from 'react-native';
 import RadioForm, {
     RadioButton,
     RadioButtonInput,
@@ -138,12 +139,13 @@ export default class MoodScreen extends Component {
                             }}
                     > View </Text>
               </TouchableOpacity>
+             
           </View>
       );
     }
 
+
     saveData() {
-        alert('Saving Mood Values')
 
         var moodJSON = {
             sad: mood1value,
@@ -164,6 +166,72 @@ export default class MoodScreen extends Component {
                 console.log(result);
             });
         });
+
+        if (showMood1 == 5) {
+           Alert.alert(
+                'Message',
+                'Saving Mood Values. Here is an article to help lift your spirits',
+                [
+                    { text: 'Article', onPress: () => Linking.openURL('http://www.uky.edu/nursing/beyond-birth') },
+                    { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                    
+                ],
+                { cancelable: false }
+            )
+            
+        }
+        else if (showMood2 == 5)
+        {
+            Alert.alert(
+                'Message',
+                'Saving Mood Values. Here is an article to help lift your spirits',
+                [
+                    { text: 'Article', onPress: () => Linking.openURL('http://www.uky.edu/nursing/beyond-birth') },
+                    { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+
+                ],
+                { cancelable: false }
+            )
+        }
+        else if (showMood3 == 5) {
+            Alert.alert(
+                'Message',
+                'Saving Mood Values. Here is an article to help lift your spirits',
+                [
+                    { text: 'Article', onPress: () => Linking.openURL('http://www.uky.edu/nursing/beyond-birth') },
+                    { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+
+                ],
+                { cancelable: false }
+            )
+        }
+        else if (showMood4 == 5) {
+            Alert.alert(
+                'Message',
+                'Saving Mood Values. Here is an article to help lift your spirits',
+                [
+                    { text: 'Article', onPress: () => Linking.openURL('http://www.uky.edu/nursing/beyond-birth') },
+                    { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+
+                ],
+                { cancelable: false }
+            )
+        }
+        else if (showMood5 == 5) {
+            Alert.alert(
+                'Message',
+                'Saving Mood Values. Here is an article to help lift your spirits',
+                [
+                    { text: 'Article', onPress: () => Linking.openURL('http://www.uky.edu/nursing/beyond-birth') },
+                    { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+
+                ],
+                { cancelable: false }
+            )
+        }
+        else {
+            alert('Saving Mood Values')
+        }
     }
 
     viewData() {
